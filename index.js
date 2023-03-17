@@ -7,6 +7,7 @@ const mongoose=require('mongoose');
 //IMPORT ROUTES
 const authRoute=require('./routes/auth');
 const profileRoute=require('./routes/profile');
+const selfAssessmentRoute=require('./routes/selfAssessment');
 const postRoute=require('./routes/posts');
 const cors = require("cors");
 dotenv.config();
@@ -34,6 +35,7 @@ app.use(cors(corsOptions));
 // ROUTE MIDDLESWARES
 app.use('/api/user',authRoute);
 app.use('/api/profile',profileRoute);
+app.use('/api/assessment',selfAssessmentRoute);
 app.use('/api/posts',postRoute);
 
 app.listen(port,() => {
